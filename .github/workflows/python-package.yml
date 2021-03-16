@@ -41,6 +41,7 @@ jobs:
           pip install --upgrade cython
           pip install flake8 pytest pandas wheel numpy
           pip install poetry
+          sudo python3.6 -m pip install --upgrade cython
     - name: Test package
       run: |
         pip install -r requirements.txt
