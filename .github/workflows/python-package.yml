@@ -41,7 +41,7 @@ jobs:
           pip install --upgrade cython
           pip install pandas wheel numpy
           sudo python3.6 -m pip install --upgrade cython
-          pip install git+https://github.com/pyproj4/pyproj.git
+          pip install pyproj --no-binary pyproj
     - name: Test package
       run: |
         pip install -r requirements.txt
