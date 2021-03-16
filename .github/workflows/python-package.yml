@@ -31,7 +31,6 @@ jobs:
         pip install -U pip setuptools
         pip install google-auth==1.27.1
         pip install pipwin pandas wheel numpy
-        pip install pyparser==2.4.7
         pipwin refresh
       if: matrix.os == 'windows-latest'
     - name: Test package
