@@ -34,7 +34,7 @@ jobs:
           pip install flake8 pytest pipwin pandas wheel numpy
           pip install pyparser==2.4.7
           pipwin refresh
-        if runner.os !='Windows'
+        if runner.os =='Linux'
           python -m pip install --upgrade pip
           pip install -U pip setuptools
           pip install google-auth==1.27.1
@@ -42,6 +42,13 @@ jobs:
           pip install pandas wheel numpy
           sudo python3 -m pip install cython
           sudo apt-get install -y python3-pyproj==3.0.0
+        if runner.os =='macOS'
+          brew install gdal
+          python -m pip install --upgrade pip
+          pip install -U pip setuptools
+          pip install google-auth==1.27.1
+          pip install --upgrade cython
+          pip install pandas wheel numpy
     - name: Test package
       run: |
         pip install -r requirements.txt
