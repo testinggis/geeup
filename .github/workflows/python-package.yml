@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       continue-on-error: true
       run: |
-      if: runner.os == "Windows"
+      if: runner.os == 'Windows'
         python -m pip install --upgrade pip
         pip install -U pip setuptools
         pip install google-auth==1.27.1
