@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        python-version: [3.7, 3.8]
+        python-version: [3.6, 3.7, 3.8]
       fail-fast: false
     steps:
     - uses: actions/checkout@v2
@@ -32,7 +32,7 @@ jobs:
           pip install -U pip setuptools
           pip install google-auth==1.27.1
           pip install flake8 pytest pipwin pandas wheel
-          pip install poetry
+          pip install poetry pyparser==2.4.7
           pipwin refresh
         if runner.os !='Windows'
           python -m pip install --upgrade pip
