@@ -31,17 +31,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -U pip setuptools
           pip install google-auth==1.27.1
-          pip install flake8 pytest pipwin pandas wheel
+          pip install flake8 pytest pipwin pandas wheel numpy
           pip install poetry pyparser==2.4.7
           pipwin refresh
         if runner.os !='Windows'
           python -m pip install --upgrade pip
           pip install -U pip setuptools
           pip install google-auth==1.27.1
-          pip install flake8 pytest pandas wheel
+          pip install --upgrade cython
+          pip install flake8 pytest pandas wheel numpy
           pip install poetry
     - name: Test package
       run: |
+        pip install -r requirements.txt
         python setup.py install
         geeup -h
         geeup init
