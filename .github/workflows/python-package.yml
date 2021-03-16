@@ -27,13 +27,13 @@ jobs:
     - name: Install dependencies
       continue-on-error: true
       run: |
-        if: runner.os == "Windows"
-          python -m pip install --upgrade pip
-          pip install -U pip setuptools
-          pip install google-auth==1.27.1
-          pip install pipwin pandas wheel numpy
-          pip install pyparser==2.4.7
-          pipwin refresh
+      if: runner.os == "Windows"
+        python -m pip install --upgrade pip
+        pip install -U pip setuptools
+        pip install google-auth==1.27.1
+        pip install pipwin pandas wheel numpy
+        pip install pyparser==2.4.7
+        pipwin refresh
     - name: Test package
       run: |
         pip install -r requirements.txt
