@@ -27,14 +27,14 @@ jobs:
     - name: Install dependencies
       continue-on-error: true
       run: |
-        if runner.os =='Windows'
+        if runner.os =='Windows'; then
           python -m pip install --upgrade pip
           pip install -U pip setuptools
           pip install google-auth==1.27.1
           pip install flake8 pytest pipwin pandas wheel numpy
           pip install pyparser==2.4.7
           pipwin refresh
-        elif runner.os =='Linux'
+        elif runner.os =='Linux'; then
           python -m pip install --upgrade pip
           pip install -U pip setuptools
           pip install google-auth==1.27.1
@@ -42,7 +42,7 @@ jobs:
           pip install pandas wheel numpy
           sudo python3 -m pip install cython
           sudo apt-get install -y python3-pyproj==3.0.0
-        elif runner.os =='macOS'
+        elif runner.os =='macOS'; then
           brew install gdal
           pip install --no-install GDAL
           python -m pip install --upgrade pip
