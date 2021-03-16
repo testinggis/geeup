@@ -34,7 +34,6 @@ setuptools.setup(
         "pandas>=0.23.0",
         "psutil>=5.4.5",
         "requests_toolbelt >= 0.7.0",
-        "pytest >= 3.0.0",
         "google-cloud-storage >= 1.1.1",
         "selenium>=3.13.0",
         'pipwin>= 0.5.0;platform_system=="Windows"',
