@@ -44,7 +44,7 @@ jobs:
           sudo apt-get install -y python3-pyproj==3.0.0
         if runner.os =='macOS'
           brew install gdal
-          pip install GDAL
+          pip install --no-install GDAL
           python -m pip install --upgrade pip
           pip install -U pip setuptools
           pip install google-auth==1.27.1
