@@ -40,8 +40,8 @@ jobs:
           pip install google-auth==1.27.1
           pip install --upgrade cython
           pip install pandas wheel numpy
-          sudo python3.6 -m pip install --upgrade cython
-          pip install pyproj --no-binary pyproj
+          sudo python3.6 -m pip install cython
+          sudo apt-get install -y python3-pyproj
     - name: Test package
       run: |
         pip install -r requirements.txt
