@@ -32,16 +32,16 @@ jobs:
           pip install -U pip setuptools
           pip install google-auth==1.27.1
           pip install flake8 pytest pipwin pandas wheel numpy
-          pip install poetry pyparser==2.4.7
+          pip install pyparser==2.4.7
           pipwin refresh
         if runner.os !='Windows'
           python -m pip install --upgrade pip
           pip install -U pip setuptools
           pip install google-auth==1.27.1
           pip install --upgrade cython
-          pip install flake8 pytest pandas wheel numpy
-          pip install poetry
+          pip install pandas wheel numpy
           sudo python3.6 -m pip install --upgrade cython
+          pip install git+https://github.com/pyproj4/pyproj.git
     - name: Test package
       run: |
         pip install -r requirements.txt
