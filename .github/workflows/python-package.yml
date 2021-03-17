@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest,macos-latest,ubuntu-latest]
-        python-version: [3.7,3.8]
+        python-version: [3.7,3.8,3.9]
       fail-fast: false
     steps:
     - uses: actions/checkout@v2
@@ -31,7 +31,6 @@ jobs:
         pip install -U pip setuptools
         pip install google-auth==1.27.1
         pip install pipwin pandas wheel numpy
-        pipwin refresh
       if: matrix.os == 'windows-latest'
     - name: Test package
       run: |
