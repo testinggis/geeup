@@ -22,7 +22,10 @@ jobs:
       - name: fetch upstream
         run: git fetch upstream
       - name: Git merge and update to latest master
-        run: git merge upstream/master master --allow-unrelated-histories
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git merge upstream/master master --allow-unrelated-histories
 #       - name: Get the Numbers
 #         run: |
 #           echo "CODE_LINES=$(scripts/cloc.sh --loc)" >> $GITHUB_ENV
