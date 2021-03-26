@@ -22,7 +22,7 @@ jobs:
       - name: fetch upstream
         run: git fetch upstream
       - name: Git merge and update to latest master
-        run: git merge upstream/master master
+        run: git merge upstream/master master --allow-unrelated-histories
 #       - name: Get the Numbers
 #         run: |
 #           echo "CODE_LINES=$(scripts/cloc.sh --loc)" >> $GITHUB_ENV
