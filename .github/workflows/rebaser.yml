@@ -1,5 +1,5 @@
 
-name: Badges
+name: fork-updater
 
 on:
   push:
@@ -15,6 +15,14 @@ jobs:
         uses: actions/checkout@v2
       - name: check remote and origin
         run: git remote -v
+      - name: add upstream
+        run: git remote add upstream git:github.com/samapriya/geeup.git
+      - name: check remote and origin
+        run: git remote -v
+      - name: fetch upstream
+        run: git fetch upstream
+      - name: Git merge and update to latest master
+        run: git merge upstream/master master
 #       - name: Get the Numbers
 #         run: |
 #           echo "CODE_LINES=$(scripts/cloc.sh --loc)" >> $GITHUB_ENV
